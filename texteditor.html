@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="toolbar">
+      <button onclick="format('bold')" title="Bold"><b>B</b></button>
+      <button onclick="format('italic')" title="Italic"><i>I</i></button>
+      <button onclick="format('underline')" title="Underline"><u>U</u></button>
+      <input
+        type="color"
+        onchange="changeColor(this.value)"
+        title="Change Color"
+      />
+
+      <div class="alignment-panel">
+        <button onclick="alignText('left')" title="Align Left">
+          <img src="icons/align-left.png" alt="align-left" />
+        </button>
+        <button onclick="alignText('center')" title="Align Center">
+          <img src="icons/align-center.png" alt="align center" />
+        </button>
+        <button onclick="alignText('right')" title="Align Right">
+          <img src="icons/align-right.png" alt="align right" />
+        </button>
+        <button onclick="alignText('justify')" title="Justify">
+          <img src="icons/justify.png" alt="justify" />
+        </button>
+      </div>
+
+      <button onclick="undo()" title="Undo">
+        <img src="icons/undo.png" alt="undo" />
+      </button>
+      <button onclick="redo()" title="Redo">
+        <img src="icons/redo.png" alt="redo" />
+      </button>
+    </div>
+
+    <div id="editor" contenteditable="true"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
